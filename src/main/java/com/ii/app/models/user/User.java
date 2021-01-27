@@ -61,13 +61,6 @@ public class User implements UserDetails {
     @JsonIgnore
     private Set<Conversation> conversations;
 
-    /* lokaty
-    @OneToMany (mappedBy = "bankAccount", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JsonIgnore
-    private Set<Saldo> saldos;
-    */
-    //springowe
-
     @Column(name = "expired")
     private boolean expired;
 
