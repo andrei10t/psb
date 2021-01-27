@@ -87,7 +87,7 @@ export class TransactionMultiCurrencyComponent implements OnInit {
 
   createTransaction() {
     this.transactionService.create(this.transactionForm.value).subscribe(res =>
-      this.snackBar.open('Transakcja zakończona', '', { duration: 3000, panelClass: 'green-snackbar' }),
+      this.snackBar.open('Transaction succeded.', '', { duration: 3000, panelClass: 'green-snackbar' }),
       err => {
         this.errorText = err.error.message;
         this.errors = true;

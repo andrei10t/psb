@@ -1,5 +1,5 @@
 <mat-toolbar>
-    Przelew walutowy
+    Currency transfer
 </mat-toolbar>
 
 <div *ngIf="bankAccounts && currencyTypes">
@@ -28,10 +28,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="mb-1">
-                            Waluta źródłowa:
+                            Source currency:
                         </div>
                         <mat-form-field style="width:100%">
-                            <mat-label class="mt-2">Waluta źródłowa</mat-label>
+                            <mat-label class="mt-2">Source currency:</mat-label>
                             <mat-select formControlName="sourceCurrency">
                                 <mat-option *ngFor="let currency of currencyList" [value]="currency">
 
@@ -46,10 +46,10 @@
 
                     <div class="col-md-6">
                         <div class="mb-1">
-                            Waluta docelowa:
+                            Target currency:
                         </div>
                         <mat-form-field style="width:100%">
-                            <mat-label class="mt-2">Waluta docelowa</mat-label>
+                            <mat-label class="mt-2">Target currency:</mat-label>
                             <mat-select formControlName="destinedCurrency">
                                 <mat-option *ngFor="let currency of currencyTypes" [value]="currency.name">
                                     {{ currency.name }}
@@ -63,7 +63,7 @@
                 </div>
 
                 <hr>
-                Na rachunek
+                Recipient
                 <div class="row mt-2">
                     <div class="col-sm-12 col-md-8">
                         <mat-form-field style="width: 100%">
@@ -130,7 +130,7 @@
                         <td>{{ transactionForm.get('sourceAccountNumber').value }}</td>
                     </tr>
                     <tr>
-                        <td class="divider">Docelowy rachunek: </td>
+                        <td class="divider">Target account number: </td>
                         <td>{{ transactionForm.get('destinedAccountNumber').value }}</td>
                     </tr>
                     <tr>
@@ -143,7 +143,7 @@
                     </tr>
                 </table>
                 <div>
-                    <button mat-raised-button color="warn" class="mr-2" matStepperPrevious>Wstecz</button>
+                    <button mat-raised-button color="warn" class="mr-2" matStepperPrevious>Back</button>
                     <button mat-raised-button color="primary" (click)="createTransaction()"
                         matStepperNext>Send</button>
                 </div>
