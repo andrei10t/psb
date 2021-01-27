@@ -150,11 +150,11 @@
             </form>
         </mat-step>
         <mat-step>
-            <ng-template matStepLabel>Koniec</ng-template>
-            <div *ngIf="!errors">Transakcja zakończona</div>
+            <ng-template matStepLabel>End.</ng-template>
+            <div *ngIf="!errors">Transaction succeded.</div>
             <div *ngIf="errors">
-                <p class="text-danger">Transakcja zakończona niepowodzeniem</p>
-                <p>Powód: {{ errorText }}</p>
+                <p class="text-danger">Transaction failed.</p>
+                <p> {{ errorText }}</p>
             </div>
             <div><!-- 
                <button mat-button matStepperPrevious>Wysłanie</button> -->

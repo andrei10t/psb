@@ -18,11 +18,11 @@ s<div class="box mat-elevation-z8">
           </mat-select>
         </mat-form-field>
 
-        Saldo docelowe<span matTooltip="Bank account for which cash is approved upon approval of the loan."
+        Total balance<span matTooltip="Bank account for which cash is approved upon approval of the loan."
                             aria-label="Tooltip">
                 (?)</span>
         <mat-form-field style="width:100%">
-          <mat-label class="mt-2">Saldo</mat-label>
+          <mat-label class="mt-2">Balance</mat-label>
           <mat-select formControlName="destinedSaldoId" (selectionChange)="switchCurrencyType($event)">
             <mat-option *ngFor="let saldo of selectedBankAccount?.saldos" [value]="saldo.id">
               {{ saldo.currencyType.name}}

@@ -82,7 +82,7 @@ export class TransactionComponent implements OnInit {
     }, err => {
       this.errorText = err.error.message;
       this.errors = true;
-      this.snackBar.open('Transakcja zakończona niepowodzeniem', '', { duration: 3000, panelClass: 'red-snackbar' });
+      this.snackBar.open('Transaction failed.', '', { duration: 3000, panelClass: 'red-snackbar' });
     });
     //  this.transaction.destinedCurrency = 'PLN';
     //this.transactionService.create(this.transaction).subscribe(res => console.log(res));

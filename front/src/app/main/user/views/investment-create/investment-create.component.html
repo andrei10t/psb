@@ -23,7 +23,7 @@
           aria-label="Tooltip">
                         (?)</span>
           <mat-form-field style="width:100%">
-            <mat-label class="mt-2">Saldo</mat-label>
+            <mat-label class="mt-2">Balance</mat-label>
             <mat-select formControlName="destinedSaldoId">
               <mat-option *ngFor="let saldo of selectedBankAccount?.saldos" [value]="saldo.id">
                 {{ saldo.currencyType.name}} {{ saldo.balance }}

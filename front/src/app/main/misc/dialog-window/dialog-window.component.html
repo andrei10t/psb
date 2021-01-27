@@ -28,7 +28,7 @@
         </mat-radio-group>
 
         <mat-form-field class="col-12" *ngIf="template.multiCurrency">
-            <mat-label class="mt-2">Saldo źródłowe</mat-label>
+            <mat-label class="mt-2">Source balance</mat-label>
             <mat-select [(ngModel)]="template.sourceCurrency">
                 <mat-option *ngFor="let currency of currencyList" [value]="currency">
                     {{ currency }}

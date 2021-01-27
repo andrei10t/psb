@@ -82,7 +82,7 @@ export class ConversationDetailsComponent implements OnInit {
 
     this.messageService.create(this.replyForm.value)
       .subscribe(res => {
-        this.snackBar.open('Wysłano odpowiedź', '', { duration: 3000, panelClass: 'green-snackbar' });
+        this.snackBar.open('Answer sent.', '', { duration: 3000, panelClass: 'green-snackbar' });
 
         this.createReplyForm();
         this.messages.push(res);

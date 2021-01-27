@@ -133,7 +133,7 @@ export class StatisticsComponent implements OnInit {
         if (result) {
           if (result.transactionComission < 0 || result.transactionComission > 99 ||
             result.exchangeCurrencyCommission < 0 || result.exchangeCurrencyCommission > 99) {
-            this.snackBar.open('Wysokość prowizji musi być większa lub równa 0 i mniejsza niż 100', '', { duration: 10000, panelClass: 'red-snackbar' });
+            this.snackBar.open('Wrong value.', '', { duration: 10000, panelClass: 'red-snackbar' });
             return;
           }
           this.bankAccountTypeService.update(bankAccTypeId, result)

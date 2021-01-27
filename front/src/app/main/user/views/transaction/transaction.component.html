@@ -99,12 +99,12 @@
                         <td>{{ transactionForm.get('sourceAccountNumber').value }}</td>
                     </tr>
                     <tr>
-                        <td class="divider">Docelowy rachunek: </td>
+                        <td class="divider">Target account: </td>
                         <td>{{ transactionForm.get('destinedAccountNumber').value }}</td>
                     </tr>
                     <tr>
                         <td class="divider">Amount: </td>
-                        <td>{{ transactionForm.get('balance').value }} PLN</td>
+                        <td>{{ transactionForm.get('balance').value }} RON</td>
                     </tr>
                     <tr>
                         <td class="divider">Title: </td>
@@ -112,7 +112,7 @@
                     </tr>
                 </table>
                 <div>
-                    <button mat-raised-button color="warn" class="mr-2" matStepperPrevious>Wstecz</button>
+                    <button mat-raised-button color="warn" class="mr-2" matStepperPrevious>Back</button>
                     <button mat-raised-button color="primary" (click)="createTransaction()"
                         matStepperNext>Send</button>
                 </div>
@@ -120,13 +120,13 @@
         </mat-step>
         <mat-step>
             <ng-template matStepLabel>End</ng-template>
-            <div *ngIf="!errors">Transakcja zakończona</div>
+            <div *ngIf="!errors">The transaction is completed.</div>
             <div *ngIf="errors">
-                <p class="text-danger">Transakcja zakończona niepowodzeniem</p>
-                <p>Powód: {{ errorText }}</p>
+                <p class="text-danger">The transaction ended in failure.</p>
+                <p>{{ errorText }}</p>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Wysłanie</button>
+                <button mat-button matStepperPrevious>Back</button>
             </div>
         </mat-step>
     </mat-horizontal-stepper>
