@@ -52,13 +52,13 @@
         <th mat-header-cell *matHeaderCellDef>Bank account number</th>
         <td mat-cell *matCellDef="let element">
           <div matTooltip="{{element.number}} (Press to copy)" (click)="copyToClipboard(element.number)">
-            {{element.number | slice:0:2}}...{{element.number | slice:22:26}}
+            {{element.number}}
           </div>
         </td>
       </ng-container>
 
       <ng-container matColumnDef="multiCurrency">
-        <th mat-header-cell *matHeaderCellDef>Multicurrency</th>
+        <th mat-header-cell *matHeaderCellDef>Bank account type</th>
         <td mat-cell *matCellDef="let element"> <span
             *ngIf="element.bankAccType.bankAccountType === 'MULTI_CURRENCY'">Multicurrency</span>
           <span *ngIf="element.bankAccType.bankAccountType === 'STANDARD'">Standardowe</span>

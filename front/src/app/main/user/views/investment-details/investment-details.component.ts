@@ -32,7 +32,7 @@ export class InvestmentDetailsComponent implements OnInit {
   closeInvestment() {
     this.investmentService.updateStatus(this.data.id)
       .subscribe(res => {
-        this.snackBar.open('Pomyślnie zamknięto lokatę', '', { duration: 3000, panelClass: 'green-snackbar' });
+        this.snackBar.open('Deposit successfully closed!', '', { duration: 3000, panelClass: 'green-snackbar' });
         this.data = res;
       }, err =>
       this.snackBar.open(err.error.message, '', { duration: 3000, panelClass: 'red-snackbar' })

@@ -20,7 +20,7 @@
     </tr>
     <tr>
         <td class="divider">Date of creation: </td>
-        <td>{{ data.creationDate | amDateFormat: 'LL HH:mm' }}</td>
+        <td>{{ data.creationDate | date:'dd.MM.yyyy HH:mm' }}</td>
     </tr>
     <tr>
         <td class="divider">Profit: <fa-icon [icon]="faChartLine" class="mr-1 text-success"></fa-icon>

@@ -61,7 +61,7 @@ export class TemplateListComponent implements OnInit {
           });
         } else {
           this.transactionTemplateService.update(index, result).subscribe(res => {
-            this.fetchData(); this.snackBar.open('Przelew został zaktualizowany', '', { duration: 3000, panelClass: 'green-snackbar' });
+            this.fetchData(); this.snackBar.open('', '', { duration: 3000, panelClass: 'green-snackbar' });
           }, err =>
             this.snackBar.open(err.error.messages, '', { duration: 5000, panelClass: 'red-snackbar' })
           );

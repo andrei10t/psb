@@ -25,13 +25,13 @@
           <th mat-header-cell *matHeaderCellDef> Type </th>
           <td mat-cell *matCellDef="let element">
             <div *ngIf="element.typeName === 'TransactionIn'">
-              Przelew
+              
               <span *ngIf="element.sourceBankAccount.number !== element.destinedBankAccount.number">
-                <fa-icon *ngIf="element.sourceBankAccount.number === bankAccount.number" matTooltip="Przelew wychodzący"
+                <fa-icon *ngIf="element.sourceBankAccount.number === bankAccount.number" matTooltip="Out"
                   style="color: red" [icon]="faArrowCircleUp">
                 </fa-icon>
                 <fa-icon *ngIf="element.destinedBankAccount.number === bankAccount.number"
-                  matTooltip="Przelew przychodzący" style="color: green" [icon]="faArrowCircleDown">
+                  matTooltip="Incoming" style="color: green" [icon]="faArrowCircleDown">
                 </fa-icon>
               </span>
             </div>
@@ -73,7 +73,7 @@
         <ng-container matColumnDef="date">
           <th mat-header-cell *matHeaderCellDef> Date </th>
           <td mat-cell *matCellDef="let element">
-            <div matTooltip="{{element.date | amDateFormat: 'LL HH:mm'}}">{{element.date | amTimeAgo}}</div>
+            <div matTooltip="{{element.date |  date:'dd.MM.yyyy'}}">{{element.date |  date:'dd.MM.yyyy'}}</div>
           </td>
         </ng-container>
 

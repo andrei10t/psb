@@ -4,12 +4,12 @@
             <div *ngIf="conversation">
                 <p>Topic: {{ conversation.topic }}</p>
                 <p>Name: {{ conversation.user.address.name }} {{ conversation.user.address.surname }}</p>
-                <p>Date: {{ conversation.creationDate | amDateFormat: 'LL HH:mm' }}</p>
+                <p>Date: {{ conversation.creationDate | date:'dd.MM.yyyy' }}</p>
             </div>
             <hr />
             <div class="d-flex justify-content-center">
                 <mat-chip-list class="mb-2" *ngIf="this.messages.length < totalElementCount">
-                    <mat-chip (click)="loadMoreMessages()">Pokaż wcześniejsze wiadomości</mat-chip>
+                    <mat-chip (click)="loadMoreMessages()">Show more</mat-chip>
                 </mat-chip-list>
             </div>
             <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
@@ -19,28 +19,28 @@
                     [ngClass]="message.user.identifier === authService.getUserIdentifier() ? 'my-message' : 'other-message'">
                     {{ message.message}}
                     <div class="date-text d-flex justify-content-end">
-                        <div matTooltip="{{message.date | amDateFormat: 'LL HH:mm'}}">{{ message.date | amTimeAgo}}
+                        <div matTooltip="{{message.date | date:'dd.MM.yyyy'}}">{{ message.date |  date:'dd.MM.yyyy'}}
                         </div>
                     </div>
                 </mat-card>
             </div>
         </div>
         <div *ngIf="messages && messages.length === 0">
-            Brak wiadomości
+            Lack of information
         </div>
 
         <hr />
 
         <div *ngIf="conversation.conversationStatus.conversationType === 'ACTIVE'">
             <mat-toolbar>
-                Odpowiedz
+                Answer
             </mat-toolbar>
             <form [formGroup]="replyForm" #formDirective="ngForm" (ngSubmit)="sendReply()">
                 <div class="col-12">
                     <mat-form-field style="width: 100%">
-                        <textarea matInput placeholder="Treść" formControlName="message" required></textarea>
+                        <textarea matInput placeholder="Reply" formControlName="message" required></textarea>
                         <mat-error *ngIf="replyForm.get('message').hasError('required')">
-                            Treść wiadomości jest <strong>wymagana</strong>
+                            Reply <strong>required</strong>
                         </mat-error>
                     </mat-form-field>
                 </div>
@@ -50,7 +50,7 @@
         </div>
 
         <div *ngIf="conversation.conversationStatus.conversationType !== 'ACTIVE'">
-            Nie możesz odpowiedzieć w tej konwersacji
+            You cannot answer in this conversation
         </div>
 
     </div>

@@ -1,11 +1,11 @@
 <div class="box mat-elevation-z8">
     <div *ngIf="user">
-        <mat-toolbar>Dane adresowe</mat-toolbar>
+        <mat-toolbar>Client data</mat-toolbar>
         <div class="container">
             <div class="row">
                 <table class="table table-hover">
                     <tr>
-                        <td class="divider">Identyfikator: </td>
+                        <td class="divider">Identifier: </td>
                         <td>{{ user.identifier }}</td>
                     </tr>
                     <tr>
@@ -23,13 +23,12 @@
                 </table>
 
                 <div class="col-12" *ngIf="authService.hasUserRole()">
-                    <p style="font-size: 13px">W razie potrzeby zmiany adresy, należy utworzyć zgłoszenie</p>
                 </div>
             </div>
         </div>
 
         <mat-toolbar>
-            Edycja hasła
+            Edit password
         </mat-toolbar>
         <div class="container">
             <form [formGroup]="passwordForm" (ngSubmit)="sendPasswordEditForm()">
