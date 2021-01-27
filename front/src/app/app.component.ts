@@ -34,7 +34,7 @@ const polishRangeLabel = (page: number, pageSize: number, length: number) => {
     Math.min(startIndex + pageSize, length) :
     startIndex + pageSize;
 
-  return `${startIndex + 1} - ${endIndex} z ${length}`;
+  return `${startIndex + 1} - ${endIndex} of ${length}`;
 }
 
 export function getPolishPaginatorIntl() {

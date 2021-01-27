@@ -56,7 +56,7 @@ export class CreditCreateComponent implements OnInit {
 
   createCredit() {
     this.creditService.create(this.form.value).subscribe(res =>
-      this.snackBar.open('Utworzono wniosek', '', {duration: 3000, panelClass: 'green-snackbar'})
+      this.snackBar.open('Request created!', '', {duration: 3000, panelClass: 'green-snackbar'})
     );
   }
 

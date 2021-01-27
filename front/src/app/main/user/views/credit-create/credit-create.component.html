@@ -7,7 +7,9 @@
     <form [formGroup]="form">
       <div class="col-md-10">
 
-        <div class="mt-2">Select a bank account
+        <div class="mt-2">Select a bank account<span matTooltip="Bank account to which the cash is transfered upon approval of the loan."
+          aria-label="Tooltip">
+(?)</span>
         </div>
         <mat-form-field style="width:100%">
           <mat-label>Bank account</mat-label>
@@ -18,9 +20,7 @@
           </mat-select>
         </mat-form-field>
 
-        Total balance<span matTooltip="Bank account for which cash is approved upon approval of the loan."
-                            aria-label="Tooltip">
-                (?)</span>
+        Currency
         <mat-form-field style="width:100%">
           <mat-label class="mt-2">Balance</mat-label>
           <mat-select formControlName="destinedSaldoId" (selectionChange)="switchCurrencyType($event)">
@@ -34,12 +34,12 @@
         <ng5-slider [(value)]="balanceSliderValue" formControlName="totalBalance"
                     (valueChange)="calculateInstallment($event)" [options]="balanceSlider"></ng5-slider>
 
-        Ilość wpłat:
+        Number of payments:
         <ng5-slider [(value)]="monthSliderValue" formControlName="totalInstallmentCount"
                     (valueChange)="calculateInstallment($event)" [options]="monthSlider"></ng5-slider>
 
         <div *ngIf="currencyType">
-          Wysokość jednej wpłaty: {{ installmentValue | currency: currencyType }}
+          Amount of one payment: {{ installmentValue | currency: currencyType }}
         </div>
       </div>
 

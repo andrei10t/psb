@@ -10,29 +10,29 @@
                             <td>{{ credit.id }}</td>
                         </tr>
                         <tr>
-                            <td class="divider">Wpłacono: </td>
+                            <td class="divider">Paid: </td>
                             <td>{{ credit.balancePaid | currency: credit.currency}}</td>
                         </tr>
                         <tr>
-                            <td class="divider">Wysokość raty: </td>
+                            <td class="divider">Amount of installment: </td>
                             <td>{{ credit.installmentAmount | currency: credit.currency}}</td>
                         </tr>
                         <tr>
-                            <td class="divider">Wysokość kredytu: </td>
+                            <td class="divider">Loan amount: </td>
                             <td>{{ credit.totalBalance | currency: credit.currency }}</td>
                         </tr>
                       
                         <tr>
-                            <td class="divider">Waluta: </td>
+                            <td class="divider">Currency: </td>
                             <td>{{ credit.currency }}</td>
                         </tr>
                         <tr>
                             <td class="divider">Status: </td>
                             <td>
-                                <p *ngIf="credit.creditStatus.creditType === 'ACTIVE'">Aktywny</p>
-                                <p *ngIf="credit.creditStatus.creditType === 'AWAITING'">Oczekujący</p>
-                                <p *ngIf="credit.creditStatus.creditType === 'CANCELED'">Usunięty</p>
-                                <p *ngIf="credit.creditStatus.creditType === 'PAID'">Spłacony</p>
+                                <p *ngIf="credit.creditStatus.creditType === 'ACTIVE'">Active</p>
+                                <p *ngIf="credit.creditStatus.creditType === 'AWAITING'">Pending</p>
+                                <p *ngIf="credit.creditStatus.creditType === 'CANCELED'">Canceled</p>
+                                <p *ngIf="credit.creditStatus.creditType === 'PAID'">Paid</p>
                             </td>
                         </tr>
 
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <mat-toolbar>Wpłaty <span *ngIf="credit.creditStatus.creditType==='ACTIVE'" class="ml-auto"><button
+        <mat-toolbar>Payments <span *ngIf="credit.creditStatus.creditType==='ACTIVE'" class="ml-auto"><button
                     mat-raised-button (click)="createInstallment()" color="primary">Opłać</button></span>
         </mat-toolbar>
         <div [hidden]="isLoading || (installments && installments.data.length === 0)">
@@ -65,7 +65,7 @@
             <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
         </div>
         <div class="col-12" *ngIf="installments && installments.data.length === 0">
-            Brak wpłat
+            No payments
         </div>
     </div>
     <div *ngIf="!credit">
