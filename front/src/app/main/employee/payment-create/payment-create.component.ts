@@ -81,7 +81,7 @@ export class PaymentCreateComponent implements OnInit {
       document.removeEventListener('copy', null);
     });
     document.execCommand('copy');
-    this.snackBar.open('Skopiowano', '', { duration: 3000, panelClass: 'green-snackbar' });
+    this.snackBar.open('Copied', '', { duration: 3000, panelClass: 'green-snackbar' });
   }
 
   private _filter(value: string) {
@@ -145,7 +145,7 @@ export class PaymentCreateComponent implements OnInit {
         observables.push(this.bankAccountService.update(id, bankAccount));
         forkJoin(observables).subscribe(array => {
           this.fetchBankAccounts();
-          this.snackBar.open('Zaktualizowano konto bankowe', '', { duration: 3000, panelClass: 'green-snackbar' });
+          this.snackBar.open('Bank account updated', '', { duration: 3000, panelClass: 'green-snackbar' });
         }, err => {
           if (err.error.messages) {
             this.snackBar.open(err.error.messages, '', { duration: 3000, panelClass: 'red-snackbar' });

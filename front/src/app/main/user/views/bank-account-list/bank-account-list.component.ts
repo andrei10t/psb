@@ -93,6 +93,6 @@ export class BankAccountListComponent implements OnInit {
       document.removeEventListener('copy', null);
     });
     document.execCommand('copy');
-    this.snackBar.open('Skopiowano', '', { duration: 3000, panelClass: 'green-snackbar' });
+    this.snackBar.open('Copied', '', { duration: 3000, panelClass: 'green-snackbar' });
   }
 }
