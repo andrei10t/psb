@@ -15,8 +15,8 @@
           <thead>
             <tr>
               <th scope="col">Type</th>
-              <th scope="col">Prowizja przelew</th>
-              <th scope="col">Prowizja wymiany walut</th>
+              <th scope="col">Transfer commission</th>
+              <th scope="col">Currency exchange commission</th>
             </tr>
           </thead>
           <tbody>
@@ -24,7 +24,7 @@
               class="{{ i === selectedIndex ? 'selected' : ''}}" (click)="changeBankAccountFormType(i)">
               <td>
                 <span *ngIf="bankAccountType.bankAccountType === 'MULTI_CURRENCY'">Multicurrency</span>
-                <span *ngIf="bankAccountType.bankAccountType === 'STANDARD'">Standardowe</span>
+                <span *ngIf="bankAccountType.bankAccountType === 'STANDARD'">Standard</span>
                 <span *ngIf="bankAccountType.bankAccountType === 'STUDENT'">Student</span>
               </td>
               <td>{{ bankAccountType.transactionComission}}%</td>
@@ -35,7 +35,7 @@
 
       </div>
       <div *ngIf="bankAccountTypes && bankAccountTypes.length === 0">
-        Brak dostępnych rodzajów rachunków bankowych.
+        No bank account types available.
       </div>
       <div *ngIf="!bankAccountTypes">
         <mat-spinner></mat-spinner>
@@ -61,7 +61,7 @@
         <th mat-header-cell *matHeaderCellDef>Bank account type</th>
         <td mat-cell *matCellDef="let element"> <span
             *ngIf="element.bankAccType.bankAccountType === 'MULTI_CURRENCY'">Multicurrency</span>
-          <span *ngIf="element.bankAccType.bankAccountType === 'STANDARD'">Standardowe</span>
+          <span *ngIf="element.bankAccType.bankAccountType === 'STANDARD'">Standard</span>
           <span *ngIf="element.bankAccType.bankAccountType === 'STUDENT'">Student</span> </td>
       </ng-container>
 

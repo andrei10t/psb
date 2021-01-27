@@ -4,7 +4,7 @@
             <h1 mat-dialog-title>{{ title }}</h1>
         </mat-toolbar>
         <mat-form-field class="col-md-6">
-            <input matInput placeholder="Nazwa" [(ngModel)]="template.templateName" required>
+            <input matInput placeholder="Name" [(ngModel)]="template.templateName" required>
         </mat-form-field>
 
         <mat-form-field class="col-12">
@@ -16,11 +16,7 @@
             </mat-select>
         </mat-form-field>
 
-<<<<<<< Updated upstream
         <label id="example-radio-group-label">Transfer type:</label>
-=======
-        <label id="example-radio-group-label">Type:</label>
->>>>>>> Stashed changes
         <mat-radio-group  [color]="'primary'" aria-labelledby="example-radio-group-label" class="example-radio-group" [color]="primary"
             [(ngModel)]="template.multiCurrency" (change)="changeSourceDestCurrencyType($event)">
             <mat-radio-button class="example-radio-button" [value]="false">

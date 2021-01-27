@@ -24,9 +24,9 @@
             </ng-container>
 
             <ng-container matColumnDef="edit">
-                <th mat-header-cell *matHeaderCellDef> Edycja </th>
+                <th mat-header-cell *matHeaderCellDef> Edit </th>
                 <td mat-cell *matCellDef="let element">
-                    <button mat-raised-button color="primary" (click)="openEditDialog(element.id)">Edytuj</button>
+                    <button mat-raised-button color="primary" (click)="openEditDialog(element.id)">Edit</button>
                 </td>
             </ng-container>
 
@@ -70,16 +70,16 @@
             </tr>
             <tr>
                 <td class="divider">Date of birth: </td>
-                <td>{{ user.address.dateOfBirth | amDateFormat: 'LL' }}</td>
+                <td>{{ user.address.dateOfBirth |date:'dd.MM.yyyy' }}</td>
             </tr>
             <tr>
-                <td class="divider">Adres: </td>
+                <td class="divider">Address: </td>
                 <td>{{ user.address.street }} {{ user.address.houseNumber }} {{ user.address.postCode }}
                     {{ user.address.city }}</td>
             </tr>
             <tr>
-                    <td class="divider">Edytuj: </td>
-                    <td><button (click)="openEditDialog(user.id)" mat-raised-button class="bg-primary text-white">Edytuj</button></td>
+                    <td class="divider">Edit: </td>
+                    <td><button (click)="openEditDialog(user.id)" mat-raised-button class="bg-primary text-white">Edit</button></td>
                 </tr>
             <tr>
                 <td class="divider">Zablokuj</td>

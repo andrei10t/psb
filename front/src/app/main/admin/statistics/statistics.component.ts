@@ -98,11 +98,11 @@ export class StatisticsComponent implements OnInit {
   formatBankAccountType(type: string) {
     switch (type) {
       case 'MULTI_CURRENCY':
-        return 'Wielowalutowe';
+        return 'Multicurrency';
       case 'STUDENT':
         return 'Student';
       default:
-        return 'Standardowe';
+        return 'Standard';
     }
   }
 

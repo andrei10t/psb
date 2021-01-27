@@ -2,26 +2,26 @@
     <mat-toolbar>Statistics</mat-toolbar>
     <div class="container">
 
-        Rodzaje walut
+        Currency type
         <div *ngIf="currencyTypes">
             <div class="row">
                 <table mat-table [dataSource]="currencyTypes">
 
                     <ng-container matColumnDef="name">
-                        <th mat-header-cell *matHeaderCellDef> Nazwa </th>
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
                         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="exchangeRate">
-                        <th mat-header-cell *matHeaderCellDef> Kurs </th>
+                        <th mat-header-cell *matHeaderCellDef> Exchange rate </th>
                         <td mat-cell *matCellDef="let element"> {{element.exchangeRate}} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="edit">
-                        <th mat-header-cell *matHeaderCellDef> Edycja </th>
+                        <th mat-header-cell *matHeaderCellDef> Edit </th>
                         <td mat-cell *matCellDef="let element">
                             <button mat-raised-button color="primary" class="mr-2"
-                                (click)="openCurrencyTypeEditDialog(element.id)">Edytuj</button>
+                                (click)="openCurrencyTypeEditDialog(element.id)">Edit</button>
                         </td>
                     </ng-container>
 
@@ -32,7 +32,7 @@
         </div>
         <hr />
 
-        Rodzaje rachunków bankowych
+        Types of bank accounts
         <div *ngIf="bankAccountTypes">
             <table mat-table [dataSource]="bankAccountTypes">
 
@@ -40,28 +40,28 @@
                     <th mat-header-cell *matHeaderCellDef> Type </th>
                     <td mat-cell *matCellDef="let element"> <span
                             *ngIf="element.bankAccountType === 'MULTI_CURRENCY'">Multicurrency</span>
-                        <span *ngIf="element.bankAccountType === 'STANDARD'">Standardowe</span>
+                        <span *ngIf="element.bankAccountType === 'STANDARD'">Standard</span>
                         <span *ngIf="element.bankAccountType === 'STUDENT'">Student</span>
                     </td>
                 </ng-container>
 
                 <ng-container matColumnDef="transactionComission">
-                    <th mat-header-cell *matHeaderCellDef> Prowizja od przelewu </th>
+                    <th mat-header-cell *matHeaderCellDef> Transaction comission </th>
                     <td mat-cell *matCellDef="let element"> {{element.transactionComission}}% </td>
                 </ng-container>
 
                 <ng-container matColumnDef="exchangeCurrencyCommission">
-                    <th mat-header-cell *matHeaderCellDef> Prowizja wymiany walut </th>
+                    <th mat-header-cell *matHeaderCellDef> Currency exchange commission </th>
                     <td mat-cell *matCellDef="let element">
                         {{element.exchangeCurrencyCommission > 0 ? element.exchangeCurrencyCommission + '%' : '-'}}
                     </td>
                 </ng-container>
 
                 <ng-container matColumnDef="edit">
-                    <th mat-header-cell *matHeaderCellDef> Edycja </th>
+                    <th mat-header-cell *matHeaderCellDef> Edit </th>
                     <td mat-cell *matCellDef="let element">
                         <button mat-raised-button color="primary" class="mr-2"
-                            (click)="openBankAccTypeEditDialog(element.id)">Edytuj</button>
+                            (click)="openBankAccTypeEditDialog(element.id)">Edit</button>
                     </td>
                 </ng-container>
 

@@ -13,13 +13,13 @@
         <td>{{ user.address.name }} {{ user.address.surname }}</td>
     </tr>
     <tr>
-        <td class="divider">Adres </td>
+        <td class="divider">Address </td>
         <td>{{ user.address.city }} {{ user.address.street }} {{ user.address.houseNumber }} {{ user.address.postCode }}
         </td>
     </tr>
 
     <tr>
         <td class="divider">Date of birth </td>
-        <td>{{ user.address.dateOfBirth | amDateFormat: 'LL' }}</td>
+        <td>{{ user.address.dateOfBirth | date:'dd.MM.yyyy' }}</td>
     </tr>
 </table>

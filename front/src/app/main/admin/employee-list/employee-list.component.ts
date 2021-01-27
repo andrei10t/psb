@@ -101,7 +101,7 @@ export class EmployeeListComponent implements OnInit {
           this.userService.update(userId, result)
             .subscribe(res => {
               this.fetchEmployees();
-              this.snackBar.open('Pomyślnie wykonano operację', '', { duration: 3000, panelClass: 'green-snackbar' });
+              this.snackBar.open('Success!', '', { duration: 3000, panelClass: 'green-snackbar' });
             },
               err => this.snackBar.open(err.error.messages, '', { duration: 5000, panelClass: 'red-snackbar' }))
         }
