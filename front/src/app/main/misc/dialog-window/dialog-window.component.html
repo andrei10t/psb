@@ -16,14 +16,14 @@
             </mat-select>
         </mat-form-field>
 
-        <label id="example-radio-group-label">Typ przelewu:</label>
+        <label id="example-radio-group-label">Transfer type:</label>
         <mat-radio-group  [color]="'primary'" aria-labelledby="example-radio-group-label" class="example-radio-group" [color]="primary"
             [(ngModel)]="template.multiCurrency" (change)="changeSourceDestCurrencyType($event)">
             <mat-radio-button class="example-radio-button" [value]="false">
-                Standardowy
+                Standard
             </mat-radio-button>
             <mat-radio-button class="example-radio-button" [value]="true">
-                Multicurrency	
+                Multi-currency	
             </mat-radio-button>
         </mat-radio-group>
 
