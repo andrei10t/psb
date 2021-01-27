@@ -32,7 +32,7 @@ export class ProfileEditComponent implements OnInit {
 
   sendPasswordEditForm() {
     this.userService.editPassword(this.passwordForm.value)
-    .subscribe(res=>alert('Hasło zmienione'));
+    .subscribe(res=>alert('Password changed'));
     
   }
 
