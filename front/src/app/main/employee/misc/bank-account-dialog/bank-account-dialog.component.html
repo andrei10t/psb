@@ -17,7 +17,7 @@
                 </mat-form-field>
             </div>
         </div>
-        <mat-toolbar>Aktywne kredyty</mat-toolbar>
+        <mat-toolbar>Active kredyty</mat-toolbar>
         <div class="row">
             <div *ngIf="credits?.length === 0">Brak Activech kredytów</div>
             <table *ngIf="credits?.length > 0" mat-table [dataSource]="credits">
@@ -70,7 +70,7 @@
                 </tr>
             </table>
         </div>
-        <mat-toolbar>Aktywne lokaty</mat-toolbar>
+        <mat-toolbar>Active lokaty</mat-toolbar>
         <div class="row">
             <div *ngIf="investments?.length === 0">Brak Activech lokat</div>
             <table *ngIf="investments?.length > 0" mat-table [dataSource]="investments">
