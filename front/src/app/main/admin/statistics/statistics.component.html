@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <p class="text-center">Kredyty</p>
+                    <p class="text-center">Credit</p>
                     <div *ngIf="creditChartDatasets && creditChartDatasets[0].data.length === creditStatuses?.length">
                         <canvas mdbChart [chartType]="creditChartType" [datasets]="creditChartDatasets"
                             [labels]="creditChartLabels" [colors]="creditChartColors" [options]="creditChartOptions"

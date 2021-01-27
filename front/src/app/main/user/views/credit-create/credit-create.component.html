@@ -1,8 +1,8 @@
-s<div class="box mat-elevation-z8">
+<div class="box mat-elevation-z8">
   <div *ngIf="bankAccounts">
     <mat-toolbar>
-      Nowy kredyt
-      <fa-icon class="ml-2" matTooltip="Po utworzeniu kredytu, musi on zostać zaakceptowany przez pracownika" [icon]="faQuestionCircle"></fa-icon>
+      New credit
+      <fa-icon class="ml-2" matTooltip="This must be approved by an employee." [icon]="faQuestionCircle"></fa-icon>
     </mat-toolbar>
     <form [formGroup]="form">
       <div class="col-md-10">

@@ -30,31 +30,33 @@
                     </a> <a routerLink="transactions/create/multicurrency"
                         class="list-group-item list-group-item-action ">
                         Currency transfer
-                    </a><a routerLink="transactions/defined" class="list-group-item list-group-item-action ">
-                        Defined transfer
                     </a>
+                    
+                    <!-- <a routerLink="transactions/defined" class="list-group-item list-group-item-action ">
+                        Defined transfer
+                    </a> -->
                 </mat-expansion-panel>
                 <mat-expansion-panel *ngIf="authService.hasUserRole()">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            <fa-icon [icon]="faHandshake" class="mr-1"></fa-icon> Wymiana
+                            <fa-icon [icon]="faHandshake" class="mr-1"></fa-icon> Exchange
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <a routerLink="exchange" class="list-group-item list-group-item-action">
-                        Kantor
+                        Home
                     </a>
                 </mat-expansion-panel>
                 <mat-expansion-panel *ngIf="authService.hasUserRole()">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            <fa-icon [icon]="faHandHolding" class="mr-1"></fa-icon> Kredyty
+                            <fa-icon [icon]="faHandHolding" class="mr-1"></fa-icon> Credit
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <a routerLink="credits/create" class="list-group-item list-group-item-action">
-                        Nowy kredyt
+                        New credit
                     </a>
                     <a routerLink="credits/list" class="list-group-item list-group-item-action">
-                        Moje kredyty
+                       My credits
                     </a>
                 </mat-expansion-panel>
                 
@@ -126,7 +128,7 @@
                     <mat-expansion-panel-header class="single-panel">
                         <mat-panel-title>
                             <a routerLink="employee/credits" class="list-group-item list-group-item-action ">
-                                <fa-icon [icon]="faMoneyBill" class="mr-1"></fa-icon> Kredyty
+                                <fa-icon [icon]="faMoneyBill" class="mr-1"></fa-icon> Credit
                             </a>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
