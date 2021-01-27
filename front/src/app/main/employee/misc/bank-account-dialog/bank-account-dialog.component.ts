@@ -68,7 +68,7 @@ export class BankAccountDialogComponent implements OnInit {
     this.bankAccountService.deleteById(this.id)
       .subscribe(res => {
         this.dialogRef.close();
-        this.snackBar.open('Usunięto', '', { duration: 3000, panelClass: 'green-snackbar' });
+        this.snackBar.open('Removed', '', { duration: 3000, panelClass: 'green-snackbar' });
       }, err=>{
         this.snackBar.open(err.error.message, '', { duration: 5000, panelClass: 'red-snackbar' });
      
