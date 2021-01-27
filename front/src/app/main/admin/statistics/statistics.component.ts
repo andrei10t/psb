@@ -164,13 +164,13 @@ export class StatisticsComponent implements OnInit {
   formatCreditType(creditType: string) {
     switch (creditType) {
       case 'ACTIVE':
-        return 'Aktywny';
+        return 'Active';
       case 'AWAITING':
-        return 'Oczekujący';
+        return 'Awaiting';
       case 'CANCELED':
         return 'Odrzucony';
       case 'PAID':
-        return 'Spłacony';
+        return 'Paid';
     }
   }
 
