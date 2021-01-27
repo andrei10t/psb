@@ -55,13 +55,13 @@ export class EmployeeSupportComponent implements OnInit {
   sendConversation() {
     this.conversationService.create(this.conversationForm.value)
       .subscribe(res => {
-        this.snackBar.open('Utworzono wpłatę', '', { duration: 3000, panelClass: 'green-snackbar' });
+        this.snackBar.open('Deposit has been created', '', { duration: 3000, panelClass: 'green-snackbar' });
    
         this.fetchMyConversations();
         this.conversationForm.reset();
         this.formDirective.resetForm();
       },err=>{
-        this.snackBar.open('Błąd tworzenia zgłoszenia', '', { duration: 3000, panelClass: 'red-snackbar' });
+        this.snackBar.open('Error creating a request', '', { duration: 3000, panelClass: 'red-snackbar' });
       });
   }
 

@@ -56,7 +56,7 @@ export class CreditDetailsComponent implements OnInit {
     }).subscribe(res => {
       this.fetchInstallmentList();
       this.fetchCredit();
-      this.snackBar.open('Utworzono wpłatę', '', { duration: 3000, panelClass: 'green-snackbar' });
+      this.snackBar.open('Deposit has been created', '', { duration: 3000, panelClass: 'green-snackbar' });
     });
   }
 

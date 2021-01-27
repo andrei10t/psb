@@ -117,7 +117,7 @@ export class PaymentCreateComponent implements OnInit {
       return;
     }
     this.paymentService.create(this.paymentForm.value).subscribe(res => {
-      this.snackBar.open('Utworzono wpłatę', '', { duration: 3000, panelClass: 'green-snackbar' });
+      this.snackBar.open('Deposit has been created', '', { duration: 3000, panelClass: 'green-snackbar' });
       this.fetchPayments();
       this.createPaymentForm();
       this.fetchBankAccounts();
