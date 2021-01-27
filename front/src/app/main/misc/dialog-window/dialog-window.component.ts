@@ -32,14 +32,14 @@ export class DialogWindowComponent implements OnInit {
     if (data.templateId) {
       this.transactiontemplateService.findOneById(data.templateId).subscribe(res => {
         this.template = res;
-        this.title = 'Edycja przelewu zdefiniowanego';
+        this.title = 'Editing a defined transfer';
       });
     } else {
       this.template = new TransactionTemplate();
       this.template.multiCurrency = false;
       this.template.destinedCurrency = 'PLN';
       this.template.sourceCurrency = 'PLN';
-      this.title = 'Tworzenie przelewu zdefiniowanego';
+      this.title = 'Creating defined transfer';
     }
 
     this.bankAccountService.findByUser().subscribe(res => {
