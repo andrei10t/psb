@@ -60,12 +60,12 @@ export class InvestmentCreateComponent implements OnInit {
     }
 
     if (saldoId && this.selectedBankAccount.saldos.find(e => e.id === saldoId).balance < balance) {
-      this.snackBar.open('Saldo nie posiada wystarczających środków', '', { duration: 3000, panelClass: 'red-snackbar' });
+      this.snackBar.open('The balance does not have enough funds.', '', { duration: 3000, panelClass: 'red-snackbar' });
       return;
     }
     this.investmentService.create(this.investmentForm.value)
       .subscribe(res =>{
-        this.snackBar.open('Lokata utworzona', '', { duration: 3000, panelClass: 'green-snackbar' })
+        this.snackBar.open('Deposit created.', '', { duration: 3000, panelClass: 'green-snackbar' })
         this.router.navigateByUrl('/core/investments/list');
       }, err => this.snackBar.open(err.error.message + ' ' + err.error.messages, '', { duration: 3000, panelClass: 'red-snackbar' })
       );

@@ -32,11 +32,7 @@
             </tr>
           </tbody>
         </table>
-        <!--  <span class="text-danger">Po akceptacji pracownika rachunek zostanie utworzony</span>
-       -->
-        <!-- <div class="row mt-2"><button mat-raised-button color="primary" class="w-30 mx-auto"
-            (click)="createBankAccount()">Utwórz</button> 
-        </div>-->
+
       </div>
       <div *ngIf="bankAccountTypes && bankAccountTypes.length === 0">
         Brak dostępnych rodzajów rachunków bankowych.
@@ -50,11 +46,6 @@
   <div *ngIf="bankAccounts && bankAccounts.length > 0">
 
     <table mat-table [dataSource]="bankAccounts">
-
-    <!--   <ng-container matColumnDef="ID">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-      </ng-container> -->
 
 
       <ng-container matColumnDef="numer">
