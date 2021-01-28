@@ -50,7 +50,7 @@ public class TransactionTemplateControllerTest {
     public void init() {
         String testAccountNr = "11112222333344445555666677";
         templateIn = new TransactionTemplateIn(
-            testAccountNr, "PLN", testAccountNr, "PLN",
+            testAccountNr, "RON", testAccountNr, "RON",
             BigDecimal.TEN, "Tytul", false, "Nazwa"
         );
         when(templateService.create(any(TransactionTemplateIn.class)))

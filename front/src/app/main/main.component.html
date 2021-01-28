@@ -36,16 +36,14 @@
                         Defined transfer
                     </a> -->
                 </mat-expansion-panel>
-                <mat-expansion-panel *ngIf="authService.hasUserRole()">
+                <!-- <mat-expansion-panel *ngIf="authService.hasUserRole()">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
                             <fa-icon [icon]="faHandshake" class="mr-1"></fa-icon> Exchange
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <a routerLink="exchange" class="list-group-item list-group-item-action">
-                        Home
-                    </a>
-                </mat-expansion-panel>
+                  
+                </mat-expansion-panel> -->
                 <mat-expansion-panel *ngIf="authService.hasUserRole()">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
@@ -78,7 +76,7 @@
                     <mat-expansion-panel-header class="single-panel">
                         <mat-panel-title>
                             <a routerLink="support" class="list-group-item list-group-item-action ">
-                                <fa-icon [icon]="faQuestionCircle" class="mr-1"></fa-icon> Applications
+                                <fa-icon [icon]="faQuestionCircle" class="mr-1"></fa-icon> Support
                             </a>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
@@ -108,7 +106,7 @@
                     <mat-expansion-panel-header class="single-panel">
                         <mat-panel-title>
                             <a routerLink="admin/support" class="list-group-item list-group-item-action ">
-                                <fa-icon [icon]="faQuestionCircle" class="mr-1"></fa-icon> Applications
+                                <fa-icon [icon]="faQuestionCircle" class="mr-1"></fa-icon> Support
                             </a>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
@@ -148,7 +146,7 @@
                     <mat-expansion-panel-header class="single-panel">
                         <mat-panel-title>
                             <a routerLink="employee/support" class="list-group-item list-group-item-action ">
-                                <fa-icon [icon]="faQuestionCircle" class="mr-1"></fa-icon> Applications
+                                <fa-icon [icon]="faQuestionCircle" class="mr-1"></fa-icon> Support
                             </a>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
@@ -158,7 +156,7 @@
                     <mat-expansion-panel-header class="single-panel">
                         <mat-panel-title>
                             <a routerLink="profile" class="list-group-item list-group-item-action ">
-                                <fa-icon [icon]="faAddressCard" class="mr-1"></fa-icon> Profil
+                                <fa-icon [icon]="faAddressCard" class="mr-1"></fa-icon> My profile
                             </a>
                         </mat-panel-title>
                     </mat-expansion-panel-header>

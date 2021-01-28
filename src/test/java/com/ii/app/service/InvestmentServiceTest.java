@@ -67,7 +67,7 @@ public class InvestmentServiceTest {
             .destinedSaldo(testSaldo)
             .investmentType(investmentTypeRepository.findAll().get(0))
             .startBalance(BigDecimal.valueOf(1000L))
-            .currency("PLN")
+            .currency("RON")
             .creationDate(Instant.now())
             .updateTimespan(Instant.now())
             .currentBalance(BigDecimal.valueOf(1000L))

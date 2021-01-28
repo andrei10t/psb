@@ -40,9 +40,9 @@ export class TransactionComponent implements OnInit {
 
     this.transactionForm = this.fb.group({
       sourceAccountNumber: [this.definedTransfer ? this.definedTransfer.sourceAccountNumber : '', [Validators.required]],
-      sourceCurrency: [this.definedTransfer ? this.definedTransfer.sourceCurrency : 'PLN', Validators.required],
+      sourceCurrency: [this.definedTransfer ? this.definedTransfer.sourceCurrency : 'RON', Validators.required],
       destinedAccountNumber: [this.definedTransfer ? this.definedTransfer.destinedAccountNumber : '', [Validators.required, BankAccountNumberValidator.validate]],
-      destinedCurrency: [this.definedTransfer ? this.definedTransfer.destinedCurrency : 'PLN', Validators.required],
+      destinedCurrency: [this.definedTransfer ? this.definedTransfer.destinedCurrency : 'RON', Validators.required],
       balance: [this.definedTransfer ? this.definedTransfer.balance : '', [Validators.required, Validators.min(1), Validators.max(1000000)]],
       title: [this.definedTransfer ? this.definedTransfer.title : '', [Validators.required, Validators.minLength(1), Validators.maxLength(100)]],
     });
@@ -84,8 +84,6 @@ export class TransactionComponent implements OnInit {
       this.errors = true;
       this.snackBar.open('Transaction failed.', '', { duration: 3000, panelClass: 'red-snackbar' });
     });
-    //  this.transaction.destinedCurrency = 'PLN';
-    //this.transactionService.create(this.transaction).subscribe(res => console.log(res));
   }
 
   changeCurrencyList() {
@@ -97,7 +95,7 @@ export class TransactionComponent implements OnInit {
 
   getAvailableFunds(bankAccount: BankAccount) {
     return bankAccount.saldos
-      .find(e => e.currencyType.name === 'PLN')
+      .find(e => e.currencyType.name === 'RON')
       .balance;
   }
 }

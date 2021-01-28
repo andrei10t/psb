@@ -41,7 +41,7 @@ export class BankAccountListComponent implements OnInit {
   }
 
   createTransaction() {
-    this.transaction.destinedCurrency = 'PLN';
+    this.transaction.destinedCurrency = 'RON';
     //this.transactionService.create(this.transaction).subscribe(res => console.log(res));
   }
 

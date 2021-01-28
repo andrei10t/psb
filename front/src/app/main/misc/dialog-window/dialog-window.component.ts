@@ -37,8 +37,8 @@ export class DialogWindowComponent implements OnInit {
     } else {
       this.template = new TransactionTemplate();
       this.template.multiCurrency = false;
-      this.template.destinedCurrency = 'PLN';
-      this.template.sourceCurrency = 'PLN';
+      this.template.destinedCurrency = 'RON';
+      this.template.sourceCurrency = 'RON';
       this.title = 'Creating defined transfer';
     }
 
@@ -63,8 +63,8 @@ export class DialogWindowComponent implements OnInit {
       } else {
         this.fillBankAccounts(true);
       }
-      this.template.destinedCurrency = 'PLN';
-      this.template.sourceCurrency = 'PLN';
+      this.template.destinedCurrency = 'RON';
+      this.template.sourceCurrency = 'RON';
     }
   }
 

@@ -125,7 +125,7 @@ public class TransactionServiceImpl implements TransactionService {
                 .filter(e -> e.getCurrencyType() == destCurrency)
                 .findFirst()
                 .orElse(destinedBankAccount.getSaldos().stream()
-                        .filter(e -> Objects.equals(e.getCurrencyType().getName(), "PLN"))
+                        .filter(e -> Objects.equals(e.getCurrencyType().getName(), "RON"))
                         .findFirst()
                         .get()
                 );

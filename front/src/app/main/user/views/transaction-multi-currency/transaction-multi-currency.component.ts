@@ -93,8 +93,6 @@ export class TransactionMultiCurrencyComponent implements OnInit {
         this.errors = true;
         this.snackBar.open('Transaction failed.', '', { duration: 3000, panelClass: 'red-snackbar' });
       });
-    //  this.transaction.destinedCurrency = 'PLN';
-    //this.transactionService.create(this.transaction).subscribe(res => console.log(res));
   }
 
   changeCurrencyList() {

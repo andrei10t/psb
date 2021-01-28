@@ -16,8 +16,8 @@ public class CurrencyConverterImplTest {
     @Test
     public void convertCurrencyTest() {
         CurrencyConverterImpl converter = new CurrencyConverterImpl();
-        CurrencyType source = new CurrencyType(1L, "PLN", 3.5f, null);
-        CurrencyType dest = new CurrencyType(1L, "PLN", 1f, null);
+        CurrencyType source = new CurrencyType(1L, "RON", 3.5f, null);
+        CurrencyType dest = new CurrencyType(1L, "RON", 1f, null);
 
         float res = converter.convertCurrency(10, source, dest).floatValue();
 

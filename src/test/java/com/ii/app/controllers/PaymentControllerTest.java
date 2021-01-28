@@ -50,7 +50,7 @@ public class PaymentControllerTest {
 
     @Before
     public void init() {
-        this.paymentIn = new PaymentIn("11112222333344445555666677", "PLN", BigDecimal.ONE, null);
+        this.paymentIn = new PaymentIn("11112222333344445555666677", "RON", BigDecimal.ONE, null);
         when(paymentService.create(any(PaymentIn.class))).thenReturn(new PaymentOut());
         when(paymentService.findAll()).thenReturn(Arrays.asList(new PaymentOut(), new PaymentOut(), new PaymentOut(), new PaymentOut()));
         when(paymentService.findAllByBankAccountId(anyLong())).thenReturn(Arrays.asList(new PaymentOut(), new PaymentOut()));

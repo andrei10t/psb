@@ -86,7 +86,7 @@ public class BankAccountServiceImpl implements BankAccountService {
                     saldoRepository.save(new Saldo(BigDecimal.ZERO, e, finalBankAccount))
                 );
         } else {
-            currencyTypeRepository.findByName("PLN")
+            currencyTypeRepository.findByName("RON")
                 .ifPresent(e -> saldoRepository.save(new Saldo(BigDecimal.ZERO, e, finalBankAccount)));
         }
         BankAccount account = bankAccountRepository.findById(finalBankAccount.getId()).get();
