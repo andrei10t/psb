@@ -167,6 +167,34 @@ public class RepositoryInitializer {
                     .build();
 
                 userRepository.save(user3);
+
+                Address address4 = Address.builder()
+                        .city("Bucuresti")
+                        .houseNumber("10")
+                        .name("Elena")
+                        .surname("Popescu")
+                        .phoneNumber("0712345678")
+                        .postCode("03-100")
+                        .dateOfBirth(Instant.parse("1988-11-30T18:35:24.00Z"))
+                        .street("Dorobanti")
+                        .build();
+
+                User user4 = User.builder()
+                        .credentials(false)
+                        .email("elena.pop@gmail.com")
+                        .enabled(true)
+                        .expired(false)
+                        .locked(false)
+                        .password(encoder.encode("parola"))
+                        .userRoles(Collections.singleton(userRoleRepository.findByUserType(UserRole.UserType.ROLE_USER)))
+                        .transactionTemplates(new HashSet<>())
+                        .identifier("12345678")
+                        .bankAccounts(new HashSet<>())
+                        .address(address4)
+                        .build();
+
+                userRepository.save(user4);
+
             }
 
             if (currencyTypeRepository.findAll().isEmpty()) {
@@ -287,6 +315,7 @@ public class RepositoryInitializer {
 
                 bankAccountRepository.save(bankAccount3);
 
+
                 Set<Saldo> saldos3 = currencyTypeRepository.findAll()
                     .stream()
                     .filter(e -> Objects.equals(e.getName(), "PLN"))
@@ -298,6 +327,40 @@ public class RepositoryInitializer {
                         .build()))
                     .collect(Collectors.toSet());
 
+
+                Set<Saldo> saldos5 = currencyTypeRepository.findAll()
+                        .stream()
+                        .filter(e -> Objects.equals(e.getName(), "USD"))
+                        .map(e -> saldoRepository.save(Saldo.builder()
+                                .balance(new BigDecimal(100f))
+                                .currencyType(e)
+                                .credits(new HashSet<>())
+                                .bankAccount(bankAccount3)
+                                .build()))
+                        .collect(Collectors.toSet());
+
+                BankAccount bankAccount4 = BankAccount.builder()
+                        .bankAccType(student)
+                        .number("12345678901234567890123456")
+                        .removed(false)
+                        .saldos(new HashSet<>())
+                        .transactions(new HashSet<>())
+                        .user(userRepository.findByIdentifier("12345678").get())
+                        .build();
+
+                bankAccountRepository.save(bankAccount4);
+
+
+                Set<Saldo> saldos4 = currencyTypeRepository.findAll()
+                        .stream()
+                        .filter(e -> Objects.equals(e.getName(), "PLN"))
+                        .map(e -> saldoRepository.save(Saldo.builder()
+                                .balance(new BigDecimal(100f))
+                                .currencyType(e)
+                                .credits(new HashSet<>())
+                                .bankAccount(bankAccount4)
+                                .build()))
+                        .collect(Collectors.toSet());
 
             }
 

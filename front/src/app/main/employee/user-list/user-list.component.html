@@ -1,5 +1,5 @@
 <div class="box mat-elevation-z8 ">
-    <mat-toolbar>Nowi użytkownicy</mat-toolbar>
+    <mat-toolbar>New users</mat-toolbar>
 
     <div [hidden]="isLoading || (userList && userList.data.length === 0)">
         <table mat-table [dataSource]="userList">
@@ -31,10 +31,10 @@
             </ng-container>
 
             <ng-container matColumnDef="activate">
-                <th mat-header-cell *matHeaderCellDef> Aktywuj </th>
+                <th mat-header-cell *matHeaderCellDef> Activate </th>
                 <td mat-cell *matCellDef="let element">
                     <button mat-raised-button class="bg-success text-white"
-                        (click)="activateUser(element.id)">Aktywuj</button>
+                        (click)="activateUser(element.id)">Activate</button>
                 </td>
             </ng-container>
 
@@ -44,16 +44,16 @@
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </div>
     <div class="col-12" *ngIf="userList && userList.data.length === 0">
-        Brak użytkowników Awaitingch na aktywację
+        No requests.
     </div>
     <hr />
-    <mat-toolbar>Zarządzanie użytkownikami</mat-toolbar>
+    <mat-toolbar>User management</mat-toolbar>
     <form class="example-form" [formGroup]="searchForm" (ngSubmit)="searchUser()">
         <div class="col-12">
             <mat-form-field>
                 <input matInput placeholder="Identifier" type="tel" formControlName="identifier">
             </mat-form-field>
-            <button mat-raised-button class="bg-success text-white mb-2 ml-2">Szukaj</button>
+            <button mat-raised-button class="bg-success text-white mb-2 ml-2">Search</button>
         </div>
     </form>
 

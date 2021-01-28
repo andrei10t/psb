@@ -43,7 +43,7 @@
                 <div [hidden]="payments?.data.length === 0">
                     <div class="col-md-4">
                         <mat-form-field>
-                            <input matInput (keyup)="applyFilterPayments($event.target.value)" placeholder="Szukaj">
+                            <input matInput (keyup)="applyFilterPayments($event.target.value)" placeholder="Search">
                         </mat-form-field>
                     </div>
                     <table mat-table [dataSource]="payments">
@@ -98,7 +98,7 @@
                 <div [hidden]="bankAccounts?.length === 0">
                     <div class="col-md-4">
                         <mat-form-field>
-                            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Szukaj">
+                            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
                         </mat-form-field>
                     </div>
                     <table mat-table [dataSource]="bankAccountList">

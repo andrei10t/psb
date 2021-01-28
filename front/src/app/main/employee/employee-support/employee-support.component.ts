@@ -55,7 +55,7 @@ export class EmployeeSupportComponent implements OnInit {
   sendConversation() {
     this.conversationService.create(this.conversationForm.value)
       .subscribe(res => {
-        this.snackBar.open('Deposit has been created', '', { duration: 3000, panelClass: 'green-snackbar' });
+        this.snackBar.open('Request has been created.', '', { duration: 3000, panelClass: 'green-snackbar' });
    
         this.fetchMyConversations();
         this.conversationForm.reset();

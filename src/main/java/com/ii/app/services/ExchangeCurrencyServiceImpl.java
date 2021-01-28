@@ -56,12 +56,12 @@ public class ExchangeCurrencyServiceImpl implements ExchangeCurrencyService {
 
     @Override
     public ExchangeCurrencyOut create(@NotNull ExchangeCurrencyIn exchangeCurrencyIn) {
-        //TODO dodac wyjatek
+
         BankAccount sourceBankAcc = bankAccountRepository.findByNumberAndRemovedFalse(exchangeCurrencyIn.getSourceBankAccNumber())
-            .orElseThrow(() -> new RuntimeException("nie znaleziono"));
+            .orElseThrow(() -> new RuntimeException("not found"));
 
         if (sourceBankAcc.getBankAccType().getBankAccountType() != BankAccountType.MULTI_CURRENCY)
-            throw new RuntimeException("nie jest wielowalutowe");
+            throw new RuntimeException("not multi currency");
 
         Saldo sourceSaldo = sourceBankAcc.getSaldos()
             .stream()

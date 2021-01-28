@@ -2,7 +2,6 @@ package com.ii.app.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ii.app.models.enums.CreditStatus;
-import com.ii.app.models.user.User;
 import lombok.*;
 
 import javax.persistence.*;
@@ -34,11 +33,9 @@ public class Credit {
     @Column(name = "balance_paid")
     private BigDecimal balancePaid;
 
-    // wysokość raty
     @Column(name = "installment_amount")
     private BigDecimal installmentAmount;
 
-    // ilość rat
     @Column(name = "total_installment_count")
     private Integer totalInstallmentCount;
 

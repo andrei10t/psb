@@ -54,7 +54,7 @@ export class UserSupportComponent implements OnInit {
   sendConversation() {
     this.conversationService.create(this.conversationForm.value)
       .subscribe(res =>{
-        this.snackBar.open('Utworzono zgłoszenie', '', { duration: 3000, panelClass: 'green-snackbar' })
+        this.snackBar.open('Sent', '', { duration: 3000, panelClass: 'green-snackbar' })
         this.fetchMyConversations();
         this.conversationForm.reset();
         this.formDirective.resetForm();

@@ -9,10 +9,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.Instant;
 
-// konto
-// waluta
-// ilosc waluty
-// wplata
 @Entity
 @Table(name = "payments")
 @Data

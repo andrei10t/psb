@@ -23,8 +23,8 @@ public class EmailServiceImpl implements EmailService {
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(receiver);
-        message.setSubject("Rejestracja w wirtualnym systemie");
-        message.setText("Dziękujemy za rejestrację w systemie. Twój identyfikator użytkownika to: " + identifier);
+        message.setSubject("Registration in the virtual system");
+        message.setText("Thank you for registering in the system. Your user ID is: " + identifier);
 
         try {
             emailSender.send(message);

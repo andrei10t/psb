@@ -41,7 +41,7 @@
             </div>
         </div>
         <mat-toolbar>Payments <span *ngIf="credit.creditStatus.creditType==='ACTIVE'" class="ml-auto"><button
-                    mat-raised-button (click)="createInstallment()" color="primary">Opłać</button></span>
+                    mat-raised-button (click)="createInstallment()" color="primary">Pay</button></span>
         </mat-toolbar>
         <div [hidden]="isLoading || (installments && installments.data.length === 0)">
             <table mat-table [dataSource]="installments">
@@ -55,7 +55,7 @@
 
                 <ng-container matColumnDef="payDate">
                     <th mat-header-cell *matHeaderCellDef> Date of payment: </th>
-                    <td mat-cell *matCellDef="let element"> {{element.payDate | amDateFormat: 'LL HH:mm'}}
+                    <td mat-cell *matCellDef="let element"> {{element.payDate | date:'dd.MM.yyyy' }}
                     </td>
                 </ng-container>
 
