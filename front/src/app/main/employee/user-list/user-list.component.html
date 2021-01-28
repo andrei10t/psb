@@ -82,12 +82,12 @@
                     <td><button (click)="openEditDialog(user.id)" mat-raised-button class="bg-primary text-white">Edit</button></td>
                 </tr>
             <tr>
-                <td class="divider">Zablokuj</td>
+                <td class="divider">Block</td>
                 <td>
                     <button mat-raised-button *ngIf="user.locked" class="bg-success text-white"
-                        (click)="changeUserStatus()">Odblokuj</button>
+                        (click)="changeUserStatus()">Unblock</button>
                     <button mat-raised-button *ngIf="!user.locked" class="bg-danger text-white"
-                        (click)="changeUserStatus()">Zablokuj</button>
+                        (click)="changeUserStatus()">Block</button>
                 </td>
             </tr>
         </table>

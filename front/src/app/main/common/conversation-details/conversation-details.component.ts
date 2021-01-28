@@ -86,7 +86,7 @@ export class ConversationDetailsComponent implements OnInit {
 
         this.createReplyForm();
         this.messages.push(res);
-      }, err => this.snackBar.open('Niepoprawna wiadomość', '', { duration: 3000, panelClass: 'red-snackbar' })
+      }, err => this.snackBar.open('Invalid message', '', { duration: 3000, panelClass: 'red-snackbar' })
       );
   }
 }

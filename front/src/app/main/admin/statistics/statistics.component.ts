@@ -168,7 +168,7 @@ export class StatisticsComponent implements OnInit {
       case 'AWAITING':
         return 'Awaiting';
       case 'CANCELED':
-        return 'Odrzucony';
+        return 'Rejected';
       case 'PAID':
         return 'Paid';
     }
