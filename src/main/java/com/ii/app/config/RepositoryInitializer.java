@@ -352,51 +352,51 @@ public class RepositoryInitializer {
                         .collect(Collectors.toSet());
 
 
-
-                BankAccount bankAccount10 = BankAccount.builder()
-                        .bankAccType(single)
-                        .number("00785678567856785678567800")
-                        .removed(false)
-                        .saldos(new HashSet<>())
-                        .transactions(new HashSet<>())
-                        .user(userRepository.findByIdentifier("12345678").get())
-                        .build();
-
-                bankAccountRepository.save(bankAccount10);
-
-                Set<Saldo> saldos10 = currencyTypeRepository.findAll()
-                        .stream()
-                        .filter(e -> Objects.equals(e.getName(), "GBP"))
-                        .map(e -> saldoRepository.save(Saldo.builder()
-                                .balance(new BigDecimal(100f))
-                                .currencyType(e)
-                                .credits(new HashSet<>())
-                                .bankAccount(bankAccount10)
-                                .build()))
-                        .collect(Collectors.toSet());
-
-
-                BankAccount bankAccount11 = BankAccount.builder()
-                        .bankAccType(student)
-                        .number("11765678567856785678567800")
-                        .removed(false)
-                        .saldos(new HashSet<>())
-                        .transactions(new HashSet<>())
-                        .user(userRepository.findByIdentifier("12345678").get())
-                        .build();
-
-                bankAccountRepository.save(bankAccount11);
-
-                Set<Saldo> saldos11 = currencyTypeRepository.findAll()
-                        .stream()
-                        .filter(e -> Objects.equals(e.getName(), "RON"))
-                        .map(e -> saldoRepository.save(Saldo.builder()
-                                .balance(new BigDecimal(100f))
-                                .currencyType(e)
-                                .credits(new HashSet<>())
-                                .bankAccount(bankAccount11)
-                                .build()))
-                        .collect(Collectors.toSet());
+//
+//                BankAccount bankAccount10 = BankAccount.builder()
+//                        .bankAccType(single)
+//                        .number("00785678567856785678567800")
+//                        .removed(false)
+//                        .saldos(new HashSet<>())
+//                        .transactions(new HashSet<>())
+//                        .user(userRepository.findByIdentifier("12345678").get())
+//                        .build();
+//
+//                bankAccountRepository.save(bankAccount10);
+//
+//                Set<Saldo> saldos10 = currencyTypeRepository.findAll()
+//                        .stream()
+//                        .filter(e -> Objects.equals(e.getName(), "GBP"))
+//                        .map(e -> saldoRepository.save(Saldo.builder()
+//                                .balance(new BigDecimal(100f))
+//                                .currencyType(e)
+//                                .credits(new HashSet<>())
+//                                .bankAccount(bankAccount10)
+//                                .build()))
+//                        .collect(Collectors.toSet());
+//
+//
+//                BankAccount bankAccount11 = BankAccount.builder()
+//                        .bankAccType(student)
+//                        .number("11765678567856785678567800")
+//                        .removed(false)
+//                        .saldos(new HashSet<>())
+//                        .transactions(new HashSet<>())
+//                        .user(userRepository.findByIdentifier("12345678").get())
+//                        .build();
+//
+//                bankAccountRepository.save(bankAccount11);
+//
+//                Set<Saldo> saldos11 = currencyTypeRepository.findAll()
+//                        .stream()
+//                        .filter(e -> Objects.equals(e.getName(), "RON"))
+//                        .map(e -> saldoRepository.save(Saldo.builder()
+//                                .balance(new BigDecimal(100f))
+//                                .currencyType(e)
+//                                .credits(new HashSet<>())
+//                                .bankAccount(bankAccount11)
+//                                .build()))
+//                        .collect(Collectors.toSet());
 
             }
 
